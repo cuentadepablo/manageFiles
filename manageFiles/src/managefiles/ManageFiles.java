@@ -26,6 +26,9 @@ public class ManageFiles {
             //leemos linea a linea el fichero
             while (s.hasNextLine()){
                 String linea =s.nextLine();
+                if (linea.equals("tmp.txt")){
+                    System.out.println("Hasta aqui hemos llegado");
+                }
                 System.out.println(linea);
 
             }
