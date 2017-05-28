@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package managefiles;
-
+import java.io.File;
+import java.util.Scanner;
 /**
  *
  * @author mrpotes
@@ -15,7 +16,33 @@ public class ManageFiles {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // fichero que queremos leer
+        File fichero  =  new File ("/Users/mrpotes/tmp.txt");
+        Scanner s = null;
+        try {
+            //leemos el contenido del fichero
+            System.out.println("Leyendo el fichero ..............");
+            s= new Scanner (fichero);
+            //leemos linea a linea el fichero
+            while (s.hasNextLine()){
+                String linea =s.nextLine();
+                System.out.println(linea);
+
+            }
+        }catch(Exception Ex){
+            System.out.println("Mensaje: "+ Ex.getMessage());
+        } finally {
+            // Cerramos el fichero tanto si hemos leido o no el fichero
+            try{
+                if(s!=null){
+                  s.close();
+                }
+            }catch(Exception Ex2){
+                    System.out.println("Mensaje de Error2: "+ Ex2.getMessage());
+                          
+            }
+        }
     }
-    
 }
+    
+
