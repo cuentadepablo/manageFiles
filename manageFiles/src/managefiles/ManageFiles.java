@@ -28,6 +28,7 @@ public class ManageFiles {
                 String linea =s.nextLine();
                 if (linea.equals("tmp.txt")){
                     System.out.println("Hasta aqui hemos llegado");
+                    System.out.println("Ahora desde arriba");
                 }
                 System.out.println(linea);
 
